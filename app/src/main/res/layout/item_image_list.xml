@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/itemLayout"
+    android:background="@color/green_100"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue_A400"
+        android:textSize="16sp"
+        android:text="User: "
+        app:layout_constraintBottom_toTopOf="@+id/viewsTitleLabel"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/viewsTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/blue_A400"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Views: "
+        app:layout_constraintBottom_toTopOf="@+id/downloadLabel"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/userLabel" />
+
+    <TextView
+        android:id="@+id/downloadTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/blue_A400"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Download: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintTop_toBottomOf="@+id/viewsTitleLabel" />
+
+
+
+    <TextView
+        android:id="@+id/userLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_A400"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/viewsLabel"
+        app:layout_constraintStart_toEndOf="@+id/userTitleLabel"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="eddy" />
+
+    <TextView
+        android:id="@+id/viewsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_A400"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/downloadLabel"
+        app:layout_constraintStart_toEndOf="@+id/viewsTitleLabel"
+        app:layout_constraintTop_toBottomOf="@+id/userLabel"
+        tools:text="123333" />
+
+    <TextView
+        android:id="@+id/downloadLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_A400"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/downloadTitleLabel"
+        app:layout_constraintTop_toBottomOf="@+id/viewsLabel"
+        tools:text="1111111" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_500"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

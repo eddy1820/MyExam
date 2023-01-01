@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "37203867546",
+    "project_id": "myexam-a6e0e",
+    "storage_bucket": "myexam-a6e0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:37203867546:android:9a38a3970eb4840321ec23",
+        "android_client_info": {
+          "package_name": "com.eddy.myexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "37203867546-0gm07i78dosc2l85vc1s2cju8mnmsb5f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eddy.myexam",
+            "certificate_hash": "a18631d082768c3a46b78624b252e116f3e93a60"
+          }
+        },
+        {
+          "client_id": "37203867546-j75hi173o4h1ftigsuc4qsjrrj66bap3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX9v4Hi1XbRvvRhzP0RQdnlFLnlCkV4vI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "37203867546-j75hi173o4h1ftigsuc4qsjrrj66bap3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

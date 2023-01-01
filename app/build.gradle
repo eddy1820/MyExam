@@ -1,0 +1,148 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id "androidx.navigation.safeargs.kotlin"
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.eddy.myexam'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.eddy.myexam"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "com.eddy.myexam.HiltTestRunner"
+        buildConfigField('String', 'BASE_URL', '"https://pixabay.com"')
+        buildConfigField("String", "API_KEY", '"27091805-3b571488718542b5d01b10f69"')
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    // Core
+    implementation "androidx.core:core-ktx:1.9.0"
+    implementation "androidx.appcompat:appcompat:1.5.1"
+    implementation "androidx.activity:activity-ktx:1.6.1"
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:30.0.0')
+    implementation 'com.google.firebase:firebase-config'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // Timber
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    kapt 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // Navigation Components
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    implementation 'androidx.navigation:navigation-testing:2.5.3'
+
+    // Preference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
+    // Material Design
+    implementation 'com.google.android.material:material:1.8.0-beta01'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    // Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    kapt "com.google.dagger:hilt-android-compiler:2.44.2"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
+
+    // Navigation Components
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+    implementation 'androidx.navigation:navigation-testing:2.5.3'
+
+    // Okhttp
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.10'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.10'
+
+    // Retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.google.code.gson:gson:2.10"
+
+    // Coroutine
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
+    implementation "androidx.room:room-ktx:2.4.3"
+
+    // Coroutine Lifecycle Components
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
+
+    // Local Unit Tests
+    implementation "androidx.test:core:1.5.0"
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "org.hamcrest:hamcrest-all:1.3"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation "org.robolectric:robolectric:4.9.1"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation "org.mockito:mockito-core:4.10.0"
+    testImplementation "app.cash.turbine:turbine:0.12.1" // coroutine flow test
+
+    // Instrumented Unit Tests
+    androidTestImplementation "junit:junit:4.13.2"
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:2.28.3"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.0") {
+        exclude group: "org.checkerframework", module: "checker"
+    }
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.5.0'
+    androidTestImplementation 'androidx.test:runner:1.5.1'
+    androidTestImplementation 'androidx.test:core:1.5.0'
+    androidTestImplementation 'androidx.test.ext:junit-ktx:1.1.4'
+    androidTestImplementation 'app.cash.turbine:turbine:0.12.1' // coroutine flow test
+    androidTestImplementation "org.mockito:mockito-core:4.10.0"
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.44.2'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.44.2'
+    debugImplementation "androidx.fragment:fragment-testing:1.6.0-alpha04"
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.3.2'
+}
